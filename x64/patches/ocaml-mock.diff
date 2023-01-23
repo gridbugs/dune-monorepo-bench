@@ -1,0 +1,13 @@
+diff --git a/src_ounit/dune b/src_ounit/dune
+index 33c093c..eafc127 100644
+--- a/src_ounit/dune
++++ b/src_ounit/dune
+@@ -3,6 +3,6 @@
+   (public_name mock-ounit)
+   (libraries
+     mock
+-    oUnit
++    ounit2
+   )
+ )
+

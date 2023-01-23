@@ -1,0 +1,13 @@
+diff --git a/lib/onnx/dune b/lib/onnx/dune
+index 1008baf..ea5bb18 100644
+--- a/lib/onnx/dune
++++ b/lib/onnx/dune
+@@ -5,7 +5,7 @@
+  (synopsis "ONNX parser for CAISAR"))
+
+ (rule
+- (deps onnx_protoc.proto generate_onnx_interface.sh)
++ (deps onnx_protoc.proto generate_onnx_interface.sh %{bin:protoc-gen-ocaml})
+  (targets onnx_protoc.ml)
+  (action
+   (run ./generate_onnx_interface.sh)))

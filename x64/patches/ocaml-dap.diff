@@ -1,0 +1,11 @@
+diff --git a/src/debug_rpc/dune b/src/debug_rpc/dune
+index bc99daf..5810eb7 100644
+--- a/src/debug_rpc/dune
++++ b/src/debug_rpc/dune
+@@ -4,4 +4,4 @@
+  (inline_tests)
+  (preprocess
+   (pps ppx_expect ppx_deriving.make ppx_deriving_yojson lwt_ppx))
+- (libraries debug_protocol lwt lwt.unix angstrom angstrom.lwt-unix logs logs.lwt react))
++ (libraries debug_protocol lwt lwt.unix angstrom angstrom-lwt-unix logs logs.lwt react))
+

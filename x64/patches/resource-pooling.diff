@@ -1,0 +1,16 @@
+diff --git a/resource_pool.ml b/resource_pool.ml
+index ad31349..95ec4f8 100644
+--- a/resource_pool.ml
++++ b/resource_pool.ml
+@@ -18,8 +18,8 @@ type 'a t = {
+ }
+
+ type 'a node = {
+-  mutable node_prev : 'a t;
+-  mutable node_next : 'a t;
++  node_prev : 'a t;
++  node_next : 'a t;
+   mutable node_data : 'a;
+   mutable node_active : bool;
+ }
+

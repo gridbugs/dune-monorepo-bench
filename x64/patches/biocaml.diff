@@ -1,0 +1,31 @@
+diff --git a/lib/lwt/dune b/lib/lwt/dune
+index db51da0..5d8e8cd 100644
+--- a/lib/lwt/dune
++++ b/lib/lwt/dune
+@@ -1,7 +1,7 @@
+ (library
+  (name biocaml_lwt)
+   (public_name biocaml.lwt)
+-  (libraries biocaml.unix core.caml_unix lwt.unix)
++  (libraries biocaml.unix core_kernel.caml_unix lwt.unix)
+   (flags :standard -short-paths -open Core)
+   (preprocess (pps ppx_jane))
+   (optional)
+diff --git a/lib/async/future_async.ml b/lib/async/future_async.ml
+index 7ad1a5a..8b6fa26 100644
+--- a/lib/async/future_async.ml
++++ b/lib/async/future_async.ml
+@@ -68,10 +68,10 @@ module Unix = struct
+   (* let getpid = Unix.getpid *)
+
+   module Stats = struct
+-    type _t = Core.Unix.stats = {
++    type _t = Core_unix.stats = {
+       st_dev   : int;
+       st_ino   : int;
+-      st_kind  : Core.Unix.file_kind;
++      st_kind  : Core_unix.file_kind;
+       st_perm  : file_perm;
+       st_nlink : int;
+       st_uid   : int;
+

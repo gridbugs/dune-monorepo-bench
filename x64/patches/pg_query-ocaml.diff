@@ -1,0 +1,10 @@
+diff --git a/dune-project b/dune-project
+index 719e496..697f373 100644
+--- a/dune-project
++++ b/dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 2.0.1)
++(lang dune 2.0)
+
+ (name pg_query)
+

@@ -1,0 +1,12 @@
+diff --git a/command-line/dune b/command-line/dune
+index a1df8d4..d7650d7 100644
+--- a/command-line/dune
++++ b/command-line/dune
+@@ -3,7 +3,7 @@
+  (public_name albatross.cli)
+  (wrapped false)
+  (modules albatross_cli)
+- (libraries checkseum.c albatross lwt.unix cmdliner logs.fmt logs.cli fmt
++ (libraries checkseum.ocaml albatross lwt.unix cmdliner logs.fmt logs.cli fmt
+    fmt.cli fmt.tty ipaddr.unix metrics metrics-lwt metrics-influx
+    metrics-rusage x509))

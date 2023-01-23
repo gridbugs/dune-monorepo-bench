@@ -1,0 +1,24 @@
+diff --git a/lwt/dune b/lwt/dune
+index 16c6aa3..edd30c4 100644
+--- a/lwt/dune
++++ b/lwt/dune
+@@ -9,7 +9,7 @@
+ (rule
+  (targets csv_lwt.ml)
+  (deps    ../src/csv.pp.ml ../src/csv_memory.ml ../config/pp.exe)
+- (action (chdir %{workspace_root} (run config/pp.exe))))
++ (action (chdir %{project_root} (run config/pp.exe))))
+
+ (rule
+  (targets csv_utils.ml)
+diff --git a/tests/dune b/tests/dune
+index 2a3829b..db0ae72 100644
+--- a/tests/dune
++++ b/tests/dune
+@@ -42,4 +42,4 @@
+ (rule
+  (targets test.ml test_lwt.ml)
+  (deps   test.pp.ml ../config/pp.exe)
+- (action (chdir %{workspace_root} (run config/pp.exe))))
++ (action (chdir %{project_root} (run config/pp.exe))))
+

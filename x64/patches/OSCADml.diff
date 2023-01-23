@@ -1,0 +1,34 @@
+diff --git a/test/dune b/test/dune
+index 490849c..f2624f0 100644
+--- a/test/dune
++++ b/test/dune
+@@ -12,17 +12,17 @@
+   rendered_sphere
+   ragged_tri_array_mesh)
+  (public_names
+-  circle
+-  hello
+-  linear_extrude_circle
+-  quat_cube
+-  quat_slerp
+-  rotate_extrude_triangle
+-  square
+-  triangle_polygon
+-  vertical_text
+-  rendered_sphere
+-  ragged_tri_array_mesh)
++  x_circle
++  x_hello
++  x_linear_extrude_circle
++  x_quat_cube
++  x_quat_slerp
++  x_rotate_extrude_triangle
++  x_square
++  x_triangle_polygon
++  x_vertical_text
++  x_rendered_sphere
++  x_ragged_tri_array_mesh)
+  (libraries OSCADml))
+
+ (cram
+

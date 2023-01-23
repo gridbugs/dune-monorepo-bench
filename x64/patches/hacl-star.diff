@@ -1,0 +1,30 @@
+diff --git a/dune b/dune
+index 0040c07..45dd4cd 100644
+--- a/dune
++++ b/dune
+@@ -1,8 +1,9 @@
+ (library
+  (name        hacl_star)
+  (public_name hacl-star)
+- (libraries hacl-star-raw
+-            zarith)
++ (libraries zarith
++            ctypes
++            ctypes.stubs)
+  (preprocessor_deps config.h)
+  (preprocess (action (run %{bin:cppo} %{input-file})))
+  (flags (:standard -warn-error -3)))
+@@ -11,6 +12,11 @@
+  (package hacl-star)
+   (mld_files index))
+ 
+-(rule (targets config.h) (deps)
++(rule (targets config.h) (deps raw/config.h)
+  (action
+-  (bash "cp $(ocamlfind query hacl-star-raw)/config.h .")))
++  (bash "cp raw/config.h .")))
++
++(rule
++ (targets __TARGETS__)
++ (deps (source_tree raw/lib))
++ (action (bash "cp raw/lib/* .")))
