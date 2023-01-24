@@ -97,3 +97,24 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   liblz4-dev \
   liblilv-dev \
   ;
+
+# create a non-root user
+RUN useradd --create-home --shell /bin/bash --gid users --groups sudo user
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+USER user
+WORKDIR /home/user
+
+# set up opam
+RUN opam init --disable-sandboxing --auto-setup #data/opam-repository
+
+# make an opam switch for running benchmarks
+RUN opam switch create bench 4.14.0
+RUN opam install -y dune ocamlbuild
+
+# make an opam switch for preparing the files for the benchmark
+RUN opam switch create prepare 4.14.0
+RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign re sexplib menhir camlp-streams zarith
+
+# copy the dune project into the image and enter its directory
+ADD --chown=user:users bench bench
+WORKDIR bench
