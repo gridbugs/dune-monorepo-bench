@@ -6,4 +6,10 @@ RUN ls
 
 RUN pwd
 
-RUN apt-get update
+RUN whoami
+
+RUN groups
+
+RUN sudo echo hi
+
+RUN sudo apt-get update
