@@ -121,5 +121,11 @@ RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign 
 # we want it to depend on as little as possible.
 RUN mkdir -p bench
 WORKDIR bench
+COPY --chown=user:users x.opam .
 COPY --chown=user:users x.opam.locked .
-WORKDIR bench
+
+# Running `opam monorepo pull` with a large package set is very likely to fail on at least
+# one package in a non-deterministic manner. Repeating it several times reduces the chance
+# that all attempts fail.
+RUN opam monorepo pull || opam monorepo pull || opam monorepo pull
+
