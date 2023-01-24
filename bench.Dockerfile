@@ -105,7 +105,7 @@ USER user
 WORKDIR /home/user
 
 # set up opam
-RUN opam init --disable-sandboxing --auto-setup #data/opam-repository
+RUN opam init --disable-sandboxing --auto-setup
 
 # make an opam switch for running benchmarks
 RUN opam switch create bench 4.14.0
@@ -115,6 +115,11 @@ RUN opam install -y dune ocamlbuild
 RUN opam switch create prepare 4.14.0
 RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign re sexplib menhir camlp-streams zarith
 
-# copy the dune project into the image and enter its directory
-ADD --chown=user:users bench bench
+# Make the project directory and copy the opam lockfile to it. Other
+# files will be copied later. We do this earlier than the rest because
+# we're about to do the time-consuming `opam monorepo pull` step and
+# we want it to depend on as little as possible.
+RUN mkdir -p bench
+WORKDIR bench
+COPY --chown=user:users x.opam.locked .
 WORKDIR bench
