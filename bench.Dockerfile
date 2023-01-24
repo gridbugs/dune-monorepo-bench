@@ -1,4 +1,7 @@
-FROM ubuntu
+FROM debian
+
+# Enable non-free packages
+RUN sed -i '/^deb/ s/$/ non-free/' /etc/apt/sources.list
 
 # Install tools and system dependencies of packages
 RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -97,6 +100,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libgstreamer-plugins-base1.0-dev \
   liblz4-dev \
   liblilv-dev \
+  libopenexr-dev \
   ;
 
 # create a non-root user
@@ -105,24 +109,8 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER user
 WORKDIR /home/user
 
-## download the opam repository
-#RUN mkdir -p data/opam-repository && \
-#  cd data/opam-repository && \
-#  git init && \
-#  git remote add origin https://github.com/ocaml/opam-repository.git && \
-#  git fetch --depth=1 origin 34576e67c88137d40ce6ff9e252d549e9e87205f && \
-#  git checkout FETCH_HEAD
-#
-## download the dune overlays repository
-#RUN mkdir -p data/opam-overlays && \
-#  cd data/opam-overlays && \
-#  git init && \
-#  git remote add origin https://github.com/dune-universe/opam-overlays.git && \
-#  git fetch --depth=1 origin d97e352e87fc628e1b00e9649f0f552865be791a && \
-#  git checkout FETCH_HEAD
-
 # set up opam
-RUN opam init --disable-sandboxing --auto-setup #data/opam-repository
+RUN opam init --disable-sandboxing --auto-setup
 
 # make an opam switch for running benchmarks
 RUN opam switch create bench 4.14.0
@@ -132,14 +120,22 @@ RUN opam install -y dune ocamlbuild
 RUN opam switch create prepare 4.14.0
 RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign re sexplib menhir camlp-streams zarith
 
-# copy the dune project into the image and enter its directory
-ADD --chown=user:users x64 bench
+# Make the project directory and copy the opam lockfile to it. Other
+# files will be copied later. We do this earlier than the rest because
+# we're about to do the time-consuming `opam monorepo pull` step and
+# we want it to depend on as little as possible.
+RUN mkdir -p bench
 WORKDIR bench
+COPY --chown=user:users x.opam .
+COPY --chown=user:users x.opam.locked .
 
 # Running `opam monorepo pull` with a large package set is very likely to fail on at least
 # one package in a non-deterministic manner. Repeating it several times reduces the chance
 # that all attempts fail.
 RUN opam monorepo pull || opam monorepo pull || opam monorepo pull
+
+# Copy the patch directory
+ADD --chown=user:users patches patches
 
 # Prepare native sources for hacl-star
 RUN . ~/.profile && cd duniverse/hacl-star/raw && ./configure && make -j
@@ -185,3 +181,12 @@ RUN bash -c 'TARGETS=$(cd duniverse/hacl-star/raw/lib && ls *.ml | xargs); sed -
 # async_ssl currently doesn't compile and is an optional dependency of some other packages
 # that we want to build, so we have to delete it
 RUN rm -r duniverse/async_ssl
+
+COPY --chown=user:users dune-project .
+COPY --chown=user:users dune .
+COPY --chown=user:users hello.ml .
+COPY --chown=user:users Makefile .
+
+#RUN . ~/.profile && make hello || true
+
+COPY --chown=user:users test.json .
