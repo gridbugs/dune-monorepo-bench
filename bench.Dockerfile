@@ -181,3 +181,5 @@ COPY --chown=user:users dune-project .
 COPY --chown=user:users dune .
 COPY --chown=user:users hello.ml .
 COPY --chown=user:users Makefile .
+
+RUN . ~/.profile && make hello
