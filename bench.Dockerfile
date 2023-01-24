@@ -10,6 +10,4 @@ RUN whoami
 
 RUN groups
 
-RUN sudo echo hi
-
-RUN sudo apt-get update
+RUN apt-get update
