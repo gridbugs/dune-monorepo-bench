@@ -1,5 +1,8 @@
 FROM debian
 
+# Enable non-free packages
+RUN sed -i '/^deb/ s/$/ non-free/' /etc/apt/sources.list
+
 # Install tools and system dependencies of packages
 RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   build-essential \
@@ -51,6 +54,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libavfilter-dev \
   libswresample-dev \
   libavcodec-dev \
+  libfdk-aac-dev \
   libfaad2 \
   libsamplerate0-dev \
   libao-dev \
@@ -182,5 +186,4 @@ COPY --chown=user:users dune .
 COPY --chown=user:users hello.ml .
 COPY --chown=user:users Makefile .
 
-# 1
 RUN . ~/.profile && make hello
