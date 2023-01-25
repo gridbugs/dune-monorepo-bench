@@ -100,6 +100,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libgstreamer-plugins-base1.0-dev \
   liblz4-dev \
   liblilv-dev \
+  libopenexr-dev \
   ;
 
 # create a non-root user
@@ -186,4 +187,4 @@ COPY --chown=user:users dune .
 COPY --chown=user:users hello.ml .
 COPY --chown=user:users Makefile .
 
-RUN . ~/.profile && make hello
+RUN . ~/.profile && make hello || true

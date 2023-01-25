@@ -1,0 +1,13 @@
+diff --git a/lib/rand/dune b/lib/rand/dune
+index f5915db..639c859 100644
+--- a/lib/rand/dune
++++ b/lib/rand/dune
+@@ -16,7 +16,7 @@
+    (run mkdir -p .cargo)
+    (run cp cargo-config.toml .cargo/config.toml)
+    ; cargo build
+-   (run cargo build --release --offline)
++   (run cargo build --release --offline --locked)
+    ; extract the produced static library
+    ; the .so fluff is here to remove errors that we sometimes get from dune
+    (run
