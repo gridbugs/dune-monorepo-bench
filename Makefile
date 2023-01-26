@@ -4,7 +4,7 @@ hello:
 	dune exec ./hello.exe
 
 bench:
-	@echo Hello, World!
+	@cat test.json
 
 clean:
 	dune clean
