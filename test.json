@@ -1,5 +1,4 @@
 {
-  "config": "bar",
   "results": [
     {
       "name": "name-of-the-test",
@@ -7,7 +6,8 @@
         {
             "name": "time",
             "value": 10,
-            "units": "sec"
+            "units": "sec",
+            "description": "x"
         }
       ]
     }
