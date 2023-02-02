@@ -3,30 +3,9 @@
       {
          "metrics" : [
             {
-               "name" : "Clean build time",
-               "units" : "secs",
-               "value" : 291.172335147858
-            },
-            {
-               "name" : "Null build time",
-               "units" : "secs",
-               "value" : [
-                  2.50356698036194,
-                  2.49292612075806,
-                  2.4937481880188,
-                  2.50111293792725,
-                  2.48896503448486
-               ]
-            }
-         ],
-         "name" : "Build times"
-      },
-      {
-         "metrics" : [
-            {
-               "name" : "Size of _boot/dune.exe",
+               "name" : "foo",
                "units" : "bytes",
-               "value" : 17738048
+               "value" : 100
             }
          ],
          "name" : "Misc"
