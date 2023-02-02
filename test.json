@@ -4,7 +4,7 @@
     {
       "name": "name-of-the-test",
       "metrics": [
-        {"name": "time", "value": 10, "units": "sec", "description": "time for action"}
+        {"name": "time", "value": 10, "units": "sec"}
       ]
     }
   ]
