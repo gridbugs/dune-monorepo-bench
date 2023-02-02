@@ -5,7 +5,7 @@
             {
                "name" : "foo",
                "units" : "bytes",
-               "value" : 200
+               "value" : 100
             }
          ],
          "name" : "Misc"
