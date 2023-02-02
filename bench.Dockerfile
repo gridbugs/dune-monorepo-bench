@@ -161,6 +161,9 @@ RUN . ~/.profile && \
 # Prepare coq
 RUN . ~/.profile && cd duniverse/coq && ./configure -no-ask
 
+# Prepare clangml
+RUN . ~/.profile && cd duniverse/clangml && ./configure
+
 # Change to the benchmarking switch to run the benchmark
 RUN opam switch bench
 
