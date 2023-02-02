@@ -8,9 +8,6 @@
   camomile.dyn
   camomile.lib_default
   camomile
-  dedukti.api
-  dedukti.kernel
-  dedukti.parsers
   FPauth-strategies
   FPauth-responses
   FPauth
@@ -36,6 +33,7 @@
   SZXX
   sanddb
   syndic
+  toml
   zarith
   abstract_algebra
   accessor.applicative_without_return
@@ -112,6 +110,9 @@
   awa-mirage
   awa
   aws-config
+  aws-s3
+  aws-s3-lwt
+  aws-s3-async
   azblob
   azure-cosmos-db
   xapi-backtrace
@@ -128,6 +129,10 @@
   base_quickcheck.ppx_quickcheck.runtime
   base_quickcheck.ppx_quickcheck
   base_quickcheck
+  bastet
+  batsat
+  batteries.unthreaded
+  batteries
   bechamel-perf
   bechamel-notty
   mperf
@@ -145,7 +150,6 @@
   bin_prot.shape
   bin_prot
   bin_prot.xen
-  binaryen
   biniou
   binning
   bio_io
@@ -154,6 +158,7 @@
   biocaml.ez
   biocaml.lwt
   biocaml.unix
+  bst
   bisect_ppx.runtime
   bitlib
   bitmasks
@@ -172,6 +177,10 @@
   caisar-onnx
   caisar-ovo
   caisar-nnet
+  calculon.common
+  calculon
+  calculon.extras
+  calculon-web
   caldav.webmachine
   caldav
   calendar
@@ -331,6 +340,7 @@
   core_unix.unix_pseudo_terminal
   core_unix.uuid
   cosovo
+  cpm
   cppo_ocamlbuild
   cps_toolbox
   cpu
@@ -342,12 +352,17 @@
   csvfields
   csvfields.xml-light
   ctypes_stubs_js
-  cudf
   cue_sheet_maker
   curly
+  current_incr
   curses
   data-encoding
+  datalog
+  datalog.caml_interface
+  datalog.top_down
+  datalog.unix
   dates_calc
+  daypack-lib
   decompress.de
   decompress.lz
   decompress.zl
@@ -359,34 +374,33 @@
   digestif
   digestif.ocaml
   directories
-  dirsp-proscript
+  diskuvbox
   distributed-lwt
   distributed
+  dkml-c-probe.common
+  dkml-c-probe
+  dkml-component-staging-opam64
+  dkml-component-staging-opam32
+  dkml-component-offline-ocamlrun
+  dkml-component-staging-ocamlrun.api
+  dkml-component-staging-ocamlrun
   dkml-dune-dsl-show
   dkml-dune-dsl
+  dkml-install-runner.user
+  dkml-install-runner.admin
+  dkml-install-runner
+  dkml-install.api
+  dkml-install.register
+  dkml-package-console.common
+  dkml-package-console.create
+  dkml-package-console.entry
+  dkml-package-console.setup
+  dkml-package-console.uninstaller
   dkml-option-vcpkg
   dmap
-  docteur.analyze
-  dolmen.class
-  dolmen
-  dolmen.intf
-  dolmen.ae
-  dolmen.dimacs
-  dolmen.icnf
-  dolmen.line
-  dolmen.smtlib2
-  dolmen.smtlib2.poly
-  dolmen.smtlib2.v6
-  dolmen.tptp
-  dolmen.tptp.v6_3_0
-  dolmen.zf
-  dolmen.std
   dolog
   domain-name
   domain_shims
-  dose3.algo
-  dose3.common
-  dose3.versioning
   dream-pure
   dream.certificate
   dream.cipher
@@ -450,6 +464,8 @@
   expect_test_helpers_async
   expect_test_helpers_core.expect_test_helpers_base
   expect_test_helpers_core
+  extism-manifest
+  extism
   extunix
   ez_api
   ez_api.debug_unix
@@ -503,6 +519,7 @@
   ez_pgocaml
   ezcurl.core
   ezcurl
+  ezcurl-lwt
   ezgzip
   ezjs_ace
   ezjs_blockies
@@ -612,6 +629,7 @@
   grenier.trope
   grenier.valmari
   bytebuffer
+  hacl_func
   hacl-star
   happy-eyeballs
   happy-eyeballs-mirage
@@ -637,9 +655,10 @@
   higher_kinded
   hmap
   hockmd
+  http-cookie
+  http-date
   http-lwt-client
   http-multipart-formdata
-  http_async
   httpaf-lwt-unix
   httpaf
   huffman
@@ -666,10 +685,14 @@
   interface-prime-lwt
   interface-prime
   interval-map
+  itv-tree
   io-page
   ip2location
-  irmin-watcher
+  ISO3166
+  iter.bigarray
+  iter
   jane-street-headers
+  jekyll-format
   jingoo
   json-data-encoding-bson
   json-data-encoding-browser
@@ -687,6 +710,7 @@
   ke
   key-parsers
   kinetic-client
+  kkmarkdown.lib
   knights_tour
   knights_tour.pentominos
   knights_tour.searchspace
@@ -701,6 +725,8 @@
   lablgtk3-extras.configwin
   lacaml
   lacaml.top
+  lambda_streams
+  lambda_streams_async
   lambdasoup
   landmarks
   landmarks.threads
@@ -709,8 +735,8 @@
   lascar.utils
   let-if
   letters
-  libbinaryen.c
   libsvm
+  line_oriented
   little_logger
   logs
   logs.fmt
@@ -725,6 +751,7 @@
   lpd.socket
   lru
   lua-ml
+  lustre-v6
   lutils
   lwt_ppx
   lwt_react
@@ -733,6 +760,7 @@
   lwt-canceler
   lwt-dllist
   lwt-exit
+  lwt-parallel
   lwt-watcher
   lwt_log.core
   lwt_log
@@ -741,6 +769,9 @@
   markup
   markup-lwt
   markup-lwt.unix
+  mdx
+  mdx.test
+  mdx.top
   melange-compiler-libs
   melange-compiler-libs.wrapper
   memprof-limits
@@ -765,10 +796,6 @@
   functoria-runtime
   functoria
   functoria.test
-  mirage.key
-  mirage
-  mirage.impl
-  mirage.target
   mirage-block
   mirage-block-combinators
   mirage-block-ccm
@@ -862,6 +889,8 @@
   mtime
   mtime.clock
   mtime.clock.os
+  m_tree
+  mugen
   mula
   mula.internal
   multipart-form-data
@@ -918,7 +947,6 @@
   bech32
   benchmark
   bigstring
-  bigstring-unix
   bimage
   bimage-unix
   bimage-io
@@ -957,6 +985,17 @@
   conduit-async
   conduit-mirage
   conduit-lwt
+  containers-thread
+  containers-data
+  containers-data.top
+  containers.bencode
+  containers.cbor
+  containers.codegen
+  containers
+  containers.monomorphic
+  containers.scc
+  containers.top
+  containers.unix
   cookie
   session-cookie
   session-cookie-async
@@ -980,6 +1019,16 @@
   cumulus
   debian-formats
   decimal
+  decoders-msgpck
+  decoders-ezjsonm
+  decoders-jsonm
+  decoders-jsonaf
+  decoders-ezxmlm
+  decoders-cbor
+  decoders-sexplib
+  decoders-yojson
+  decoders-bencode
+  decoders
   diet
   stdlib-diff
   dispatch
@@ -1032,7 +1081,6 @@
   ezsqlite
   faad
   farmhash
-  fd-send-recv
   fdkaac
   ff
   ff-bench
@@ -1052,6 +1100,7 @@
   flac.ogg
   flac.decoder
   frei0r
+  geojson
   git-unix.index
   git-unix
   carton-git
@@ -1141,6 +1190,7 @@
   kafka
   kafka.helpers
   kafka_lwt
+  kittyimg
   ladspa
   lame
   lastfm
@@ -1159,8 +1209,11 @@
   lp
   lsp
   jsonrpc
+  lt-code
   mad
   magic-mime
+  markdown
+  markdown.html
   matplotlib
   mbr-format
   mccs
@@ -1184,11 +1237,17 @@
   moss
   msgpck-repr
   msgpck
+  multibase
+  multicodec
+  multihash-digestif
+  multihash
   murmur3
   mustache
+  mutf8
   nanoid
   nanoid.nanoid_os
   nanoid.os
+  nanosvg
   netlink
   non_empty_list
   odepack
@@ -1217,6 +1276,8 @@
   ppx_gen_rec
   ocaml-probes.probes_lib
   processor
+  prom
+  prom.cfg
   ocaml-protoc
   pbrt
   ocaml-protoc-plugin.google_types
@@ -1234,6 +1295,8 @@
   re
   reddit_api_kernel
   redis
+  redis-sync
+  redis-lwt
   rfc7748
   rope
   rpclib-html
@@ -1255,12 +1318,14 @@
   samplerate
   scgi
   scrypt-kdf
+  search
   secp256k1-internal
   semver2
   session
   session-cohttp-lwt
   session-webmachine
   session-cohttp
+  session-redis-lwt
   session-postgresql-async
   session-postgresql-lwt
   session-postgresql
@@ -1283,7 +1348,6 @@
   syslog
   syslog-rfc5424
   taglib
-  tar-mirage
   tar
   tar.gz
   tar-unix
@@ -1314,6 +1378,7 @@
   uri.services_full
   uri
   uri-re
+  uring
   vchan
   ocaml-vdom
   ocaml-version
@@ -1330,6 +1395,7 @@
   win-eventlog
   wtf8
   x509
+  xcursor
   xdg-basedir
   xenstore.client
   xenstore.unix
@@ -1337,6 +1403,14 @@
   xenstore.server
   xenstore_transport
   xmlplaylist
+  yaml.bindings
+  yaml.ffi
+  yaml
+  yaml.bindings.types
+  yaml.types
+  yaml.unix
+  yaml.c
+  yaml-sexp
   zmq
   zmq.deferred
   zmq-async
@@ -1368,7 +1442,12 @@
   ocplib-simplex
   ocsipersist-lib
   octavius
+  current_slack
   current_rpc
+  current
+  current.cache
+  current.term
+  current.fs
   odoc-parser
   offheap
   omd
@@ -1392,6 +1471,8 @@
   ordinal
   orec
   orewa
+  orsvm_e1071
+  oseq
   serial
   otoml
   ounit2.advanced
@@ -1407,11 +1488,6 @@
   packstream
   pacomb
   pacomb.ppx
-  paf
-  paf.alpn
-  paf.mirage
-  paf-le
-  parany
   parmap
   parse-argv
   parsexp
@@ -1425,6 +1501,7 @@
   patience_diff
   pcre
   pecu
+  petrol
   pg_query
   pgocaml_ppx
   pgocaml
@@ -1482,6 +1559,10 @@
   ppx_const
   ppx_conv_func
   ppx_counters
+  ppx_cstubs.custom
+  ppx_cstubs.internal
+  ppx_cstubs.merlin
+  ppx_cstubs
   ppx_csv_conv
   ppx_custom_printf
   ppx_defer
@@ -1503,10 +1584,16 @@
   ppx_deriving_encoding
   ppx_deriving_hardcaml.runtime
   ppx_deriving_hardcaml
-  ppx_deriving_jsoo
   ppx_deriving_protobuf.runtime
   ppx_deriving_protobuf
+  ppx_deriving_qcheck
+  qcheck
+  qcheck-core
+  qcheck-core.runner
+  qcheck-alcotest
+  qcheck-ounit
   ppx_deriving_scad
+  ppx_deriving_yaml
   ppx_deriving_yojson.runtime
   ppx_deriving_yojson
   ppx_disable_unused_warnings
@@ -1537,6 +1624,8 @@
   ppx_jane.kernel
   ppx_jane
   ppx_js_style
+  ppx_jsobject_conv.runtime
+  ppx_jsobject_conv
   ppx_jsonaf_conv.expander
   ppx_jsonaf_conv.runtime-lib
   ppx_jsonaf_conv
@@ -1549,9 +1638,13 @@
   ppx_module_timer.runtime
   ppx_module_timer
   ppx_optcomp
+  ppx_optint
   ppx_optional
   ppx_pattern_bind
   ppx_pipebang
+  ppx_protocol_conv_json
+  ppx_protocol_conv_yaml
+  ppx_protocol_conv_yaml.lib
   ppx_protocol_conv_jsonm
   ppx_protocol_conv.driver
   ppx_protocol_conv
@@ -1609,15 +1702,19 @@
   prbnmcn-proptest
   prbnmcn-stats
   prbnmcn-ucb1
+  preface
+  preface.core
+  preface.make
+  preface.specs
+  preface.stdlib
   prettym
   pringo
   printbox
   printbox-html
+  printbox-text
   proc-smaps
   profunctor
   terminal
-  progress
-  progress.engine
   prometheus
   prometheus-app
   prometheus-app.unix
@@ -1625,19 +1722,10 @@
   promise_jsoo
   protocol_version_header
   psq
-  ptime
-  ptime.clock.os
   ptmap
   ptset
   pure-splitmix
-  pvec
   pythonlib
-  ppx_deriving_qcheck
-  qcheck
-  qcheck-core
-  qcheck-core.runner
-  qcheck-alcotest
-  qcheck-ounit
   qinap
   qtest.lib
   randomconv
@@ -1657,10 +1745,14 @@
   reason.cmdliner
   reason.easy_format
   reason.ocaml-migrate-parsetree
+  jose
   record_builder
   redirect
   redis-async
   reedsolomon
+  reparse
+  reparse-lwt-unix
+  reparse-lwt
   repr
   res
   resource-pooling
@@ -1682,6 +1774,7 @@
   ringo
   root1d
   rosetta
+  routes
   rpc_parallel
   rresult
   scad_ml
@@ -1689,6 +1782,7 @@
   sek
   semaphore-compat
   seq
+  seqes
   sequencer_table
   setcore
   sexp.lazy_list
@@ -1727,6 +1821,7 @@
   smtlib-utils
   spawn
   spdx_licenses
+  spelll
   splay_tree
   splittable_random
   spoke.core
@@ -1738,12 +1833,16 @@
   xapi-stdext-date
   xapi-stdext-threads
   xapi-stdext-pervasives
-  xapi-stdext-unix
   xapi-stdext-encodings
   xapi-stdext-zerocheck
   xapi-stdext-std
   stdio
+  stdlib-random.v3
+  stdlib-random.v4
+  stdlib-random.v5
+  stdlib-random.v5o
   stdlib-shims
+  stramon-lib
   streaming
   string_dict
   stringext
@@ -1753,6 +1852,7 @@
   swhid_core
   swhid_types
   syslog-message
+  talaria-bibtex
   tdigest
   terminal_size
   textutils.ascii_table_kernel
@@ -1795,6 +1895,7 @@
   travesty.containers
   travesty
   trax
+  tree_layout
   treeprint
   trie
   tube
@@ -1810,8 +1911,10 @@
   tyxml
   tyxml.functor
   u2f
+  user-agent-parser
   ubase
   uchar
+  um-abt
   unidecode
   unionFind
   unstrctrd
@@ -1833,6 +1936,7 @@
   vcaml.plugin
   vcaml
   vcaml.test
+  vcardgen
   vec
   vector
   vector3
@@ -1840,21 +1944,20 @@
   visitors.ppx
   vocal
   vpt
+  vue-jsoo.version
   vue-jsoo.mjs
   vue-jsoo.component
   vue-jsoo.router
   vue-jsoo.vuex
   vue-jsoo
-  vue-jsoo.tyx
   vue-jsoo.chartjs
   webauthn
   webbrowser
   webbrowser.cli
   wseg
+  wtr
+  wtr-ppx
   wu-manber-fuzzy-search
-  xapi-inventory
-  xapi-rrd
-  xapi-rrd.unix
   xmelly
   xmldiff_js
   xmldiff

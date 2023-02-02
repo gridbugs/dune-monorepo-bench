@@ -101,6 +101,9 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   liblz4-dev \
   liblilv-dev \
   libopenexr-dev \
+  tmux \
+  llvm \
+  libclang-dev \
   ;
 
 # create a non-root user
@@ -113,12 +116,12 @@ WORKDIR /home/user
 RUN opam init --disable-sandboxing --auto-setup
 
 # make an opam switch for running benchmarks
-RUN opam switch create bench 4.14.0
+RUN opam switch create bench 4.14.1
 RUN opam install -y dune ocamlbuild
 
 # make an opam switch for preparing the files for the benchmark
-RUN opam switch create prepare 4.14.0
-RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign re sexplib menhir camlp-streams zarith
+RUN opam switch create prepare 4.14.1
+RUN opam install -y opam-monorepo ppx_sexp_conv ocamlfind ctypes ctypes-foreign re sexplib menhir camlp-streams zarith stdcompat refl
 
 # Make the project directory and copy the opam lockfile to it. Other
 # files will be copied later. We do this earlier than the rest because
@@ -171,6 +174,7 @@ RUN cd duniverse/ocurl && ./configure
 RUN cd duniverse/elpi && make config LEGACY_PARSER=1
 RUN cd duniverse/cpu && autoconf && autoheader && ./configure
 RUN cd duniverse/setcore && autoconf && autoheader && ./configure
+RUN cd duniverse/batsat-ocaml && ./build_rust.sh
 
 # This is a hack to make hacl-star compile on aarch64 and x64.
 # Different raw files get built depending on the architecture,
@@ -181,6 +185,7 @@ RUN bash -c 'TARGETS=$(cd duniverse/hacl-star/raw/lib && ls *.ml | xargs); sed -
 # async_ssl currently doesn't compile and is an optional dependency of some other packages
 # that we want to build, so we have to delete it
 RUN rm -r duniverse/async_ssl
+RUN rm -r duniverse/coq-of-ocaml
 
 COPY --chown=user:users dune-project .
 COPY --chown=user:users dune .
@@ -188,5 +193,4 @@ COPY --chown=user:users hello.ml .
 COPY --chown=user:users Makefile .
 
 #RUN . ~/.profile && make hello || true
-
-COPY --chown=user:users test.json .
+#COPY --chown=user:users test.json .

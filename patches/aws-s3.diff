@@ -1,0 +1,13 @@
+diff --git a/aws-s3/dune b/aws-s3/dune
+index 35a61ce..0f6b9c1 100644
+--- a/aws-s3/dune
++++ b/aws-s3/dune
+@@ -2,7 +2,7 @@
+  (name        aws_s3)
+  (public_name aws-s3)
+  (synopsis "Amazon S3 access library")
+- (libraries ptime inifiles digestif.c
++ (libraries ptime inifiles digestif.ocaml
+             base64 uri yojson
+             ppx_protocol_conv_json
+             ppx_protocol_conv_xmlm str)
