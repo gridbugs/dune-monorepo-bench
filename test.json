@@ -6,8 +6,7 @@
         {
             "name": "time",
             "value": 20,
-            "units": "sec",
-            "description": "time for action"
+            "units": "sec"
         }
       ]
     }
