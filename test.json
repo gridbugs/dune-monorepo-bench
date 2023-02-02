@@ -1,6 +1,5 @@
 {
   "name": "optional-name-of-the-benchmark",
-  "config": "optional-config-object",
   "results": [
     {
       "name": "name-of-the-test",
