@@ -5,10 +5,9 @@
       "metrics": [
         {
             "name": "time",
-            "value": 25,
+            "value": 30,
             "units": "sec"
-        },
-        {"name": "benchmark-name", "value": "benchmark-value", "units": "benchmark-unit"}
+        }
       ]
     }
   ]
