@@ -3,9 +3,10 @@
     {
       "name": "name-of-the-test",
       "metrics": [
+           {"name": "benchmark-name", "value": "benchmark-value", "units": "benchmark-unit", "description": "benchmark-description"},
         {
             "name": "time",
-            "value": 10,
+            "value": 15,
             "units": "sec",
             "description": "x"
         }
