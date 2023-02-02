@@ -4,7 +4,11 @@
     {
       "name": "name-of-the-test",
       "metrics": [
-        { "name": "time", "value": 10, "units": "sec" }
+        {
+            "name": "time",
+            "value": 10,
+            "units": "sec"
+        }
       ]
     }
   ]
