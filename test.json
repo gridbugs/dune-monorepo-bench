@@ -9,7 +9,7 @@ outaoesuoehusntaoe
           {"name": "benchmark-name", "value": 42, "units": "benchmark-unit", "description": "benchmark-description"},
         {
             "name": "time",
-            "value": 20,
+            "value": 0,
             "units": "sec",
             "description": "x"
         }
@@ -21,3 +21,20 @@ outaoesuoehusntaoe
 aoeuhsaoeuhsaoneusaoeu
 
 {}
+
+{
+  "results": [
+    {
+      "name": "name-of-the-test",
+      "metrics": [
+          {"name": "benchmark-name", "value": 42, "units": "benchmark-unit", "description": "benchmark-description"},
+        {
+            "name": "time",
+            "value": 50,
+            "units": "sec",
+            "description": "x"
+        }
+      ]
+    }
+  ]
+}
