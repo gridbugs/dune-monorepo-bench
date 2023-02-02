@@ -1,14 +1,13 @@
 {
-   "results" : [
-      {
-         "name" : "Misc",
-         "metrics" : [
-            {
-               "name" : "foo",
-               "units" : "bytes",
-               "value" : [400, 500]
-            }
-         ]
-      }
-   ]
+  "name": "optional-name-of-the-benchmark",
+  "config": "optional-config-object",
+  "results": [
+    {
+      "name": "name-of-the-test",
+      "metrics": [
+        {"name": "num_ops", "value": [0.5, 1.5], "units": "ops/sec", "description": "total number of ops", "trend": "lower-is-better"},
+        {"name": "time", "value": 20, "units": "sec", "description": "time for action"}
+      ]
+    }
+  ]
 }
