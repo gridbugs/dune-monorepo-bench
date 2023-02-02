@@ -7,7 +7,8 @@
             "name": "time",
             "value": 25,
             "units": "sec"
-        }
+        },
+        {"name": "benchmark-name", "value": "benchmark-value", "units": "benchmark-unit"}
       ]
     }
   ]
