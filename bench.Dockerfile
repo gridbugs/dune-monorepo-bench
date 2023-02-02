@@ -1,1 +1,1 @@
-FROM ubuntu
+FROM ocaml/opam@sha256:4ac34403f7fd302e300b0d12e10606c1500ca67b396725bf4ecb6402d8cddb5f
