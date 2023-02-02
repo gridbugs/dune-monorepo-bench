@@ -1,5 +1,5 @@
 {
-  "name": "foo",
+  "config": "bar",
   "results": [
     {
       "name": "name-of-the-test",
