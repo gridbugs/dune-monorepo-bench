@@ -1,14 +1,14 @@
 {
    "results" : [
       {
+         "name" : "Misc",
          "metrics" : [
             {
                "name" : "foo",
                "units" : "bytes",
-               "value" : 300
+               "value" : 400
             }
-         ],
-         "name" : "Misc"
+         ]
       }
    ]
 }
