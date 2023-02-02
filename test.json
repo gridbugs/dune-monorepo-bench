@@ -4,7 +4,6 @@
     {
       "name": "name-of-the-test",
       "metrics": [
-        {"name": "num_ops", "value": [0.5, 1.5], "units": "ops/sec", "description": "total number of ops", "trend": "lower-is-better"},
         {"name": "time", "value": 20, "units": "sec", "description": "time for action"}
       ]
     }
