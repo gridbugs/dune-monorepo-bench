@@ -1,28 +1,5 @@
-outaoesuoehusntaoe
-
-
 {
-  "results": [
-    {
-      "name": "name-of-the-test",
-      "metrics": [
-          {"name": "benchmark-name", "value": 42, "units": "benchmark-unit", "description": "benchmark-description"},
-        {
-            "name": "time",
-            "value": 0,
-            "units": "sec",
-            "description": "x"
-        }
-      ]
-    }
-  ]
-}
-
-aoeuhsaoeuhsaoneusaoeu
-
-{}
-
-{
+  "name": "bar",
   "results": [
     {
       "name": "name-of-the-test",
