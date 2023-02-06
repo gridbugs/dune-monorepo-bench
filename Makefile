@@ -4,7 +4,7 @@ hello:
 	dune exec ./hello.exe
 
 bench:
-	@cat test.json
+	bash -c 'time dune build ./hello.exe'
 
 clean:
 	dune clean
