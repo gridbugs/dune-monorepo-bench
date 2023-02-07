@@ -1,17 +1,1 @@
-{
-  "name": "test",
-  "results": [
-    {
-      "name": "name-of-the-test",
-      "metrics": [
-          {"name": "benchmark-name", "value": 42, "units": "benchmark-unit", "description": "benchmark-description"},
-        {
-            "name": "time",
-            "value": 50,
-            "units": "sec",
-            "description": "x"
-        }
-      ]
-    }
-  ]
-}
+{"results":[{"name":"Trace Replay - main metrics","metrics":{"CPU time elapsed (s)":[0.0002729999999999677],"TZ-transactions per sec":[0],"TZ-operations per sec":[32967.03296703687],"Context.set per sec":[10989.01098901229],"tail latency (s)":[0.0001416449958924204]}},{"name":"Trace Replay - resource usage - disk IO (total)","metrics":{"IOPS (op/s)":[21978.02197802458],"throughput (MB/s)":[1.794871794872007],"total (MB)":[0.00049]}},{"name":"Trace Replay - resource usage - disk IO (read)","metrics":{"IOPS (op/s)":[0],"throughput (MB/s)":[0],"total (MB)":[0]}},{"name":"Trace Replay - resource usage - disk IO (write)","metrics":{"IOPS (op/s)":[21978.02197802458],"throughput (MB/s)":[1.794871794872007],"total (MB)":[0.00049]}},{"name":"Trace Replay - resource usage - misc.","metrics":{"max memory usage (GB)":[0.003724528],"mean CPU usage":[1.004936353424495]}},{"name":"Trace Replay - Context Phases Length","metrics":{"block (ms)":[0.2716589951887727],"buildup (ms)":[0.1300139992963523],"commit (ms)":[0.1416449958924204]}},{"name":"Trace Replay - Context Buildup Lengths","metrics":{"add (µs)":[1.622666691976822],"remove (µs)":[],"find (µs)":[2.334000043902051],"mem (µs)":[],"mem_tree (µs)":[],"copy (µs)":[],"unseen (µs)":[120.4779991326177]}},{"name":"Trace Replay - irmin-pack Global Stats","metrics":{"finds":[0],"finds.from_staging":[0],"finds.from_lru":[0],"finds.from_pack_direct":[0],"finds.from_pack_indexed":[0],"finds.missing":[0],"finds.cache_miss":[0],"appended_hashes":[0],"appended_offsets":[5],"inode_add":[0],"inode_remove":[0],"inode_of_seq":[0],"inode_of_raw":[0],"inode_rec_add":[0],"inode_rec_remove":[0],"inode_to_binv":[2],"inode_decode_bin":[0],"inode_encode_bin":[2]}},{"name":"Trace Replay - irmin.tree Global Stats","metrics":{"contents_hash":[3],"contents_find":[0],"contents_add":[3],"node_hash":[0],"node_mem":[0],"node_add":[2],"node_find":[0],"node_val_v":[2],"node_val_find":[0],"node_val_list":[0]}},{"name":"Trace Replay - index Stats","metrics":{"cumu data MB":[0],"merge count":[0]}},{"name":"Trace Replay - GC Stats","metrics":{"minor words allocated":[0],"major words allocated":[0],"minor collections":[0],"major collections":[0],"promoted words":[0],"compactions":[0],"avg major heap MB after commit":[3.724528]}}]}
