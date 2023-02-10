@@ -1,0 +1,10 @@
+diff --git a/dune-project b/dune-project
+index 8298d1ac..96b067c3 100644
+--- a/dune-project
++++ b/dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 2.0.1)
++(lang dune 2.0)
+ (name bastet)
+ (source (github Risto-Stevcev/bastet))
+ (license BSD-3-Clause)

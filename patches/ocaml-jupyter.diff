@@ -1,0 +1,166 @@
+diff --git a/src/comm/dune b/src/comm/dune
+index 093e28e..15f169b 100644
+--- a/src/comm/dune
++++ b/src/comm/dune
+@@ -9,7 +9,7 @@
+               Stdin)
+  (flags       (:standard
+                -thread
+-               (:include %{workspace_root}/config/ocaml_flags.sexp)))
++               (:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps ppx_yojson_conv))
+  (libraries   jupyter
+               jupyter.notebook))
+diff --git a/src/completor/dune b/src/completor/dune
+index 8f3c9cc..31d77e8 100644
+--- a/src/completor/dune
++++ b/src/completor/dune
+@@ -4,7 +4,7 @@
+  (modules     Jupyter_completor
+               Merlin
+               Intf)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps lwt_ppx ppx_yojson_conv))
+  (libraries   jupyter
+               jupyter_log
+diff --git a/src/core/dune b/src/core/dune
+index 7a09e44..6a7738e 100644
+--- a/src/core/dune
++++ b/src/core/dune
+@@ -11,6 +11,6 @@
+               AnsiCode
+               Json
+               Version)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps ppx_yojson_conv))
+  (libraries   unix uuidm ppx_yojson_conv_lib))
+diff --git a/src/kernel/dune b/src/kernel/dune
+index db6e718..bb26313 100644
+--- a/src/kernel/dune
++++ b/src/kernel/dune
+@@ -9,7 +9,7 @@
+               Channel_intf
+               Connection_info
+               Hmac)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps lwt_ppx ppx_yojson_conv))
+  (libraries   jupyter
+               jupyter_repl
+diff --git a/src/log/dune b/src/log/dune
+index 1c5cf6d..e1cab90 100644
+--- a/src/log/dune
++++ b/src/log/dune
+@@ -2,6 +2,6 @@
+  (name        jupyter_log)
+  (synopsis    "A logging library for OCaml Jupyter kernel")
+  (modules     Jupyter_log)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps lwt_ppx))
+  (libraries   lwt lwt.unix logs logs.lwt))
+diff --git a/src/main/dune b/src/main/dune
+index 36191f6..0273063 100644
+--- a/src/main/dune
++++ b/src/main/dune
+@@ -9,4 +9,4 @@
+               jupyter_repl
+               jupyter_completor
+               jupyter_kernel)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp))))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp))))
+diff --git a/src/notebook/dune b/src/notebook/dune
+index 302ba6a..a14daf6 100644
+--- a/src/notebook/dune
++++ b/src/notebook/dune
+@@ -9,7 +9,7 @@
+               Process
+               Eval
+               Unsafe)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (libraries   jupyter
+               uuidm
+               base64
+diff --git a/src/repl/dune b/src/repl/dune
+index 8fc8cfd..80fcfde 100644
+--- a/src/repl/dune
++++ b/src/repl/dune
+@@ -10,7 +10,7 @@
+               Error
+               Dir_trace
+               Compat)
+- (flags       ((:include %{workspace_root}/config/ocaml_flags.sexp)))
++ (flags       ((:include %{project_root}/config/ocaml_flags.sexp)))
+  (preprocess  (pps lwt_ppx))
+  (libraries   jupyter
+               jupyter_log
+diff --git a/tests/completor/dune b/tests/completor/dune
+index e85edfb..10a954d 100644
+--- a/tests/completor/dune
++++ b/tests/completor/dune
+@@ -4,9 +4,9 @@
+  (libraries  jupyter
+              jupyter_completor
+              ounit2)
+- (flags      ((:include %{workspace_root}/config/ocaml_flags.sexp))))
++ (flags      ((:include %{project_root}/config/ocaml_flags.sexp))))
+ 
+ (alias
+  (name   runtest)
+  (deps   test_completor.exe)
+- (action (chdir %{workspace_root}/test (run %{deps} -runner sequential))))
++ (action (chdir %{project_root}/test (run %{deps} -runner sequential))))
+diff --git a/tests/kernel/dune b/tests/kernel/dune
+index 64ef53a..79a9bfc 100644
+--- a/tests/kernel/dune
++++ b/tests/kernel/dune
+@@ -5,9 +5,9 @@
+  (libraries  jupyter
+              jupyter_kernel
+              ounit2)
+- (flags      ((:include %{workspace_root}/config/ocaml_flags.sexp))))
++ (flags      ((:include %{project_root}/config/ocaml_flags.sexp))))
+ 
+ (alias
+  (name   runtest)
+  (deps   test_kernel.bc)
+- (action (chdir %{workspace_root}/test (run %{deps} -runner sequential))))
++ (action (chdir %{project_root}/test (run %{deps} -runner sequential))))
+diff --git a/tests/notebook/dune b/tests/notebook/dune
+index 1030abb..dddfc99 100644
+--- a/tests/notebook/dune
++++ b/tests/notebook/dune
+@@ -4,7 +4,7 @@
+  (preprocess (pps lwt_ppx ppx_deriving.show ppx_yojson_conv))
+  (libraries  jupyter_notebook
+              ounit2)
+- (flags      ((:include %{workspace_root}/config/ocaml_flags.sexp))))
++ (flags      ((:include %{project_root}/config/ocaml_flags.sexp))))
+ 
+ (alias
+  (name   runtest)
+diff --git a/tests/repl/dune b/tests/repl/dune
+index c35e6bf..619c43f 100644
+--- a/tests/repl/dune
++++ b/tests/repl/dune
+@@ -6,7 +6,7 @@
+  (libraries  jupyter
+              jupyter_repl
+              ounit2)
+- (flags      ((:include %{workspace_root}/config/ocaml_flags.sexp))))
++ (flags      ((:include %{project_root}/config/ocaml_flags.sexp))))
+ 
+ (alias
+  (name   runtest)
+@@ -15,7 +15,7 @@
+          ../fixtures/ocamlinit.ml
+          ../fixtures/file.bin)
+  (action
+-  (chdir %{workspace_root}/tests
++  (chdir %{project_root}/tests
+          (progn
+            (run %{dep:test_evaluation.bc})
+            (run %{dep:test_process.bc} -runner sequential)))))

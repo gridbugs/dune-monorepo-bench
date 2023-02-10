@@ -1,0 +1,10 @@
+diff --git a/dune-project b/dune-project
+index bc2ba30..c7af07e 100644
+--- a/dune-project
++++ b/dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 2.4.0)
++(lang dune 2.4)
+ (name bastet_async)
+ (source (github Risto-Stevcev/bastet-async))
+ (license BSD-3-Clause)

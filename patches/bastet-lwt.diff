@@ -1,0 +1,10 @@
+diff --git a/dune-project b/dune-project
+index b1259ee..92d58f5 100644
+--- a/dune-project
++++ b/dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 2.4.0)
++(lang dune 2.4)
+ (name bastet_lwt)
+ (source (github Risto-Stevcev/bastet-lwt))
+ (license BSD-3-Clause)

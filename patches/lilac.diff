@@ -1,0 +1,8 @@
+diff --git a/dune-project b/dune-project
+index fc2a35e..e9098d5 100644
+--- a/dune-project
++++ b/dune-project
+@@ -1,2 +1,2 @@
+-(lang dune 2.7.0)
++(lang dune 2.7)
+ (name lilac)
