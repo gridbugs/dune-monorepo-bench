@@ -104,6 +104,8 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   tmux \
   llvm \
   libclang-dev \
+  libmaxminddb-dev \
+  libsecp256k1-dev \
   ;
 
 # create a non-root user
