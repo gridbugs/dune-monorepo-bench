@@ -5018,7 +5018,7 @@ pin-depends: [
   ]
   [
     "camlp5.8.00.04+dune"
-    "https://github.com/gridbugs/camlp5/archive/refs/tags/8.00.04+dune-experimental.tar.gz"
+    "https://github.com/gridbugs/camlp5/archive/refs/tags/8.00.04+dune-experimental1.tar.gz"
   ]
   [
     "camlrack.0.10.1"
@@ -10381,7 +10381,7 @@ pin-depends: [
   ]
   [
     "tiny_json.1.1.6+dune"
-    "https://gitlab.com/camlspotter/tiny_json/-/archive/1.1.6/tiny_json-1.1.6.tar.bz2"
+    "https://gitlab.com/gridbugs/tiny_json/-/archive/1.1.6+dune-experimental/tiny_json-1.1.6+dune-experimental.tar.bz2"
   ]
   [
     "tldr.0.3.0"
@@ -13915,10 +13915,10 @@ x-opam-monorepo-duniverse-dirs: [
     ]
   ]
   [
-    "https://github.com/gridbugs/camlp5/archive/refs/tags/8.00.04+dune-experimental.tar.gz"
+    "https://github.com/gridbugs/camlp5/archive/refs/tags/8.00.04+dune-experimental1.tar.gz"
     "camlp5"
     [
-      "sha512=8db0fb7432b52aa8302f9f5ddbc62334986ed1777abdea043c8078fe773d40003b9b22f70350def33f9b04c548684ca7f8e984ccb9cb48a69947e68f30483bcf"
+      "sha512=5da9793e034832f81332566b51cdb4f4582a127e32f56dc6789dfa8f5e77244be764d48139be8c99edf156df16e5a2252425fae868174d739e2aa9b5d0fbae30"
     ]
   ]
   [
@@ -18811,11 +18811,6 @@ x-opam-monorepo-duniverse-dirs: [
     ]
   ]
   [
-    "https://gitlab.com/camlspotter/tiny_json/-/archive/1.1.6/tiny_json-1.1.6.tar.bz2"
-    "tiny_json"
-    ["md5=5fe8b57981099290e6d38f7e096969e7"]
-  ]
-  [
     "https://gitlab.com/camlspotter/treeprint/-/archive/2.3.0/treeprint-2.3.0.tar.gz"
     "treeprint"
     [
@@ -18914,6 +18909,11 @@ x-opam-monorepo-duniverse-dirs: [
       "md5=a4ea377afe5c52496bf445621ad2e02b"
       "sha512=bcb55c99ae6a2308028d813c78e512901e4ab4f1bb6f054a95de044abee9e420ff9100e4bb6e00520977b800039e8e5338739a4b2ace28cbf8961ba415e33230"
     ]
+  ]
+  [
+    "https://gitlab.com/gridbugs/tiny_json/-/archive/1.1.6+dune-experimental/tiny_json-1.1.6+dune-experimental.tar.bz2"
+    "tiny_json"
+    ["md5=a70a9fe2e8fabafc941d19c25976485f"]
   ]
   [
     "https://gitlab.com/irill/cudf/-/archive/v0.10/cudf-v0.10.tar.gz"

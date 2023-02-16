@@ -106,6 +106,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libclang-dev \
   libmaxminddb-dev \
   libsecp256k1-dev \
+  libstring-shellquote-perl \
   ;
 
 # create a non-root user
@@ -119,7 +120,7 @@ RUN opam init --disable-sandboxing --auto-setup
 
 # make an opam switch for running benchmarks
 RUN opam switch create bench 4.14.1
-RUN opam install -y dune ocamlbuild
+RUN opam install -y dune ocamlbuild camlp5
 
 # make an opam switch for preparing the files for the benchmark
 RUN opam switch create prepare 4.14.1
@@ -154,11 +155,8 @@ RUN . ~/.profile && \
 
 # Install camlp5 outside of opam
 RUN . ~/.profile && \
-  mkdir -p ~/.local && \
   cd duniverse/camlp5 && \
-  ./configure --prefix /home/user/.local && \
-  make -j && \
-  make install
+  ./configure
 
 # Prepare coq
 RUN . ~/.profile && cd duniverse/coq && ./configure -no-ask
