@@ -1,0 +1,24 @@
+diff --git a/config/discover.ml b/config/discover.ml
+index af62c2b..960b094 100644
+--- a/config/discover.ml
++++ b/config/discover.ml
+@@ -1,7 +1,7 @@
+ module C = Configurator.V1
+ 
+ (* This script is run in _build/<context>/src/ *)
+-let crlibm_dir = "../../../src/crlibm"
++let crlibm_dir = "crlibm"
+ 
+ let copy ?(src_dir=crlibm_dir) fn0 fn1 =
+   let fh0 = open_in_bin (Filename.concat src_dir fn0) in
+diff --git a/src/dune b/src/dune
+index dee9792..7367846 100644
+--- a/src/dune
++++ b/src/dune
+@@ -33,5 +33,5 @@
+ (rule
+  (targets log-selected.c log2-selected.c log10-selected.c
+           c_flags.sexp lib_flags.sexp)
+- (deps    ../config/discover.exe)
++ (deps    ../config/discover.exe (source_tree crlibm))
+  (action  (run %{deps})))

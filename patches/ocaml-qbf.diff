@@ -1,0 +1,32 @@
+diff --git a/src/quantor/dune b/src/quantor/dune
+index fe606fd..006cd9a 100644
+--- a/src/quantor/dune
++++ b/src/quantor/dune
+@@ -8,17 +8,21 @@
+  (wrapped false)
+  (libraries qbf)
+  (flags :standard -warn-error -a+8)
+- (c_library_flags :standard -lquantor -lpicosat -L.)
++ (c_library_flags :standard -lquantor -lpicosat  -L%{read:cwd.txt})
+  (library_flags
+-  (-cclib -L.)
++  (-cclib -L%{read:cwd.txt})
+   (-cclib -lquantor)
+   (-cclib -lpicosat)))
+ 
++(rule
++ (target cwd.txt)
++ (action (with-stdout-to cwd.txt (run pwd))))
++
+ (rule
+  (targets picosat.h libpicosat.a quantor.h libquantor.a)
+  (action
+   (progn
+-   (copy %{workspace_root}/libpicosat.a libpicosat.a)
+-   (copy %{workspace_root}/picosat.h picosat.h)
+-   (copy %{workspace_root}/libquantor.a libquantor.a)
+-   (copy %{workspace_root}/quantor.h quantor.h))))
++   (copy %{project_root}/libpicosat.a libpicosat.a)
++   (copy %{project_root}/picosat.h picosat.h)
++   (copy %{project_root}/libquantor.a libquantor.a)
++   (copy %{project_root}/quantor.h quantor.h))))

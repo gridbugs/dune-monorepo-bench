@@ -1,23 +1,17 @@
 (executable
  (name hello)
- (libraries
+ (libraries 
   0install-solver
   ANSITerminal
-  FPauth
-  FPauth-core
-  FPauth-responses
-  FPauth-strategies
   FrontC
   ISO3166
   ISO8601
-  OCADml
   OCanren-ppx.internals
   OCanren-ppx.ppx_deriving_reify
   OCanren-ppx.ppx_distrib
   OCanren-ppx.ppx_fresh
   OCanren-ppx.ppx_noinjected
   OCanren-ppx.ppx_repr
-  OSCADml
   SZXX
   abstract_algebra
   accessor
@@ -25,13 +19,13 @@
   accessor_async
   accessor_base
   accessor_core
-  afl-persistent
   agrid
-  albatross
-  albatross.cli
-  albatross.provision
-  albatross.stats
-  albatross.tls
+  alba.albalib
+  alba.core
+  alba.fmlib
+  alba.fmlib_js
+  alba.fmlib_native
+  alba.fmlib_node
   alcotest
   alcotest-async
   alcotest-lwt
@@ -140,9 +134,6 @@
   base_quickcheck.ppx_quickcheck
   base_quickcheck.ppx_quickcheck.expander
   base_quickcheck.ppx_quickcheck.runtime
-  bastet
-  bastet_async
-  bastet_lwt
   batsat
   batteries
   batteries.unthreaded
@@ -179,13 +170,16 @@
   biocaml.ez
   biocaml.lwt
   biocaml.unix
-  bisect_ppx.runtime
+  bitcoin
+  bitcoin-cohttp-async
+  bitcoin-cohttp-lwt
   bitlib
   bitmasks
   bitstring
   bitv
   bitv.string
   bjack
+  blake3
   bloomf
   bls12-381
   bls12-381-hash
@@ -241,9 +235,7 @@
   capnp
   capnp-rpc
   capnp-rpc-lwt
-  capnp-rpc-mirage
   capnp-rpc-net
-  capnp-rpc-unix
   capnp.unix
   caqti-driver-postgresql
   carray
@@ -252,6 +244,18 @@
   carton-git.unix
   carton-lwt
   carton.thin
+  catala.dcalc
+  catala.desugared
+  catala.driver
+  catala.lcalc
+  catala.literate
+  catala.runtime_jsoo
+  catala.runtime_ocaml
+  catala.scalc
+  catala.scopelang
+  catala.surface
+  catala.utils
+  catala.verification
   catapult
   catapult-client
   catapult-file
@@ -288,12 +292,9 @@
   codept.ocamlbuild
   cohttp
   cohttp-async
-  cohttp-curl
-  cohttp-curl-lwt
   cohttp-lwt
   cohttp-lwt-jsoo
   cohttp-lwt-unix
-  cohttp-mirage
   cohttp-server-lwt-unix
   cohttp_static_handler
   coin
@@ -310,7 +311,6 @@
   conduit-async
   conduit-lwt
   conduit-lwt-unix
-  conduit-mirage
   conex
   conex.openssl
   conex.unix
@@ -415,8 +415,8 @@
   cpu
   cpuid
   crc
+  crlibm
   crontab
-  crowbar
   crunch
   cry
   cryptokit
@@ -439,16 +439,12 @@
   cumulus
   curly
   current
-  current-albatross-deployer
-  current-albatross-deployer.iptables.api
-  current-albatross-deployer.iptables.client
   current.cache
   current.fs
   current.term
   current_docker
   current_git
   current_incr
-  current_ocluster
   current_rpc
   current_slack
   curses
@@ -459,7 +455,6 @@
   datalog.unix
   dates_calc
   daypack-lib
-  debian-formats
   decimal
   decoders
   decoders-bencode
@@ -490,8 +485,6 @@
   dispatch-js
   distributed
   distributed-lwt
-  dkim
-  dkim-mirage
   dkml-c-probe
   dkml-c-probe.common
   dkml-component-offline-ocamlrun
@@ -518,8 +511,8 @@
   dns-certify.mirage
   dns-cli
   dns-client
-  dns-client.lwt
-  dns-client.mirage
+  dns-client-lwt
+  dns-client-mirage
   dns-client.resolvconf
   dns-client.unix
   dns-mirage
@@ -536,26 +529,33 @@
   dockerfile
   dockerfile-cmd
   dockerfile-opam
+  dolmen
+  dolmen.ae
+  dolmen.class
+  dolmen.dimacs
+  dolmen.icnf
+  dolmen.intf
+  dolmen.line
+  dolmen.smtlib2
+  dolmen.smtlib2.poly
+  dolmen.smtlib2.v6
+  dolmen.smtlib2.v6_response
+  dolmen.smtlib2.v6_script
+  dolmen.std
+  dolmen.tptp
+  dolmen.tptp.v6_3_0
+  dolmen.zf
+  dolmen_loop
+  dolmen_type
   dolog
   domain-name
   domain_shims
+  dose3.algo
+  dose3.common
+  dose3.versioning
   dotenv
-  dream
-  dream-accept
-  dream-cli
-  dream-encoding
-  dream-htmx
   dream-httpaf
-  dream-livereload
   dream-pure
-  dream.certificate
-  dream.cipher
-  dream.graphiql
-  dream.graphql
-  dream.http
-  dream.server
-  dream.sql
-  dream.unix
   dssi
   dtoa
   dtools
@@ -582,16 +582,13 @@
   earley.str
   easy-format
   edn
+  eigen
+  eigen.cpp
   either
-  elpi
-  elpi.legacy_parser
-  elpi.lexer_config
-  elpi.parser
-  elpi.trace.ppx
-  elpi.trace.runtime
-  elpi.util
   email_message
   email_message.email_address
+  embedded_ocaml_templates.EML_runtime
+  embedded_ocaml_templates.ppx_eml
   emile
   emile.cmdliner
   encore
@@ -607,17 +604,12 @@
   expect_test_helpers_core.expect_test_helpers_base
   extism
   extism-manifest
-  extlib
   extunix
   ez_api
   ez_api.blake2s
   ez_api.cohttp
   ez_api.cohttp_base
   ez_api.cohttp_lwt
-  ez_api.curl
-  ez_api.curl_common
-  ez_api.curl_lwt
-  ez_api.curl_multi
   ez_api.debug
   ez_api.debug_unix
   ez_api.encoding
@@ -646,6 +638,7 @@
   ez_api.req_s
   ez_api.request
   ez_api.request_lwt
+  ez_api.request_verbose
   ez_api.sendgrid
   ez_api.sendgrid_encoding
   ez_api.sendgrid_services
@@ -659,9 +652,6 @@
   ez_api.session_client
   ez_hash
   ez_pgocaml
-  ezcurl
-  ezcurl-lwt
-  ezcurl.core
   ezgzip
   ezjs_ace
   ezjs_blockies
@@ -764,6 +754,7 @@
   genspir
   geojson
   geoml
+  getopt
   gettext
   gettext-camomile
   gettext-stub
@@ -803,7 +794,6 @@
   gluten-async
   gluten-lwt
   gluten-lwt-unix
-  gluten-mirage
   gmap
   gmp
   gnuplot
@@ -815,6 +805,8 @@
   goblint-cil.syntacticsearch
   goblint-cil.zrapp
   gperftools
+  gpiod
+  gpiod.bindings
   gr
   graphics
   graphql
@@ -849,16 +841,12 @@
   grenier.trope
   grenier.valmari
   grpc
-  grpc-async
   grpc-lwt
   gstreamer
   h1_parser
   h2
-  h2-async
   h2-lwt
   h2-lwt-unix
-  h2-mirage
-  hacl-star
   hacl_func
   happy-eyeballs
   happy-eyeballs-lwt
@@ -885,6 +873,7 @@
   hg_lib
   hidapi
   higher_kinded
+  higlo
   hilite
   hkdf
   hmap
@@ -908,9 +897,6 @@
   hxd.lwt
   hxd.string
   hxd.unix
-  hyper
-  hyper.http
-  hyper.logic
   i3ipc
   icalendar
   idd
@@ -934,6 +920,7 @@
   interface-prime-lwt
   interval-map
   interval_base
+  interval_crlibm
   interval_intel
   io-page
   ip2location
@@ -945,6 +932,7 @@
   irc-client-lwt
   irc-client-lwt-ssl
   irc-client-unix
+  iri
   irmin-watcher
   iso639
   iter
@@ -955,6 +943,18 @@
   jemalloc
   jingoo
   jose
+  js_of_ocaml
+  js_of_ocaml-compiler
+  js_of_ocaml-compiler.findlib-support
+  js_of_ocaml-compiler.runtime
+  js_of_ocaml-compiler.runtime-files
+  js_of_ocaml-lwt
+  js_of_ocaml-lwt.logger
+  js_of_ocaml-ppx
+  js_of_ocaml-ppx.as-lib
+  js_of_ocaml-ppx_deriving_json
+  js_of_ocaml-tyxml
+  js_of_ocaml.deriving
   json-data-encoding
   json-data-encoding-browser
   json-data-encoding-bson
@@ -979,6 +979,7 @@
   kafka
   kafka.helpers
   kafka_lwt
+  kdl
   ke
   key-parsers
   kicadsch
@@ -991,12 +992,9 @@
   kqueue
   krb
   krb.internal
-  lablgtk3
-  lablgtk3-extras
-  lablgtk3-extras.configwin
-  lablgtk3-goocanvas2
-  lablgtk3-gtkspell3
-  lablgtk3-sourceview3
+  lablqml
+  lablqml.myparser
+  lablqml.ppx
   lacaml
   lacaml.top
   ladspa
@@ -1021,7 +1019,8 @@
   let-if
   letsencrypt
   letsencrypt-dns
-  letters
+  letsencrypt-mirage
+  letsencrypt-mirage.http-server
   leveldb
   libbinaryen.c
   libsvm
@@ -1031,6 +1030,7 @@
   little_logger
   lmdb
   lo
+  lockfree
   logical
   logs
   logs-async
@@ -1095,11 +1095,10 @@
   mec.signature
   mec.utils
   mehari
-  mehari-lwt-unix
-  mehari-mirage
   melange-compiler-libs
   melange-compiler-libs.wrapper
   mem_usage
+  memgraph
   memprof-limits
   memtrace
   memtrace-mirage
@@ -1108,6 +1107,7 @@
   mesh-easymesh
   mesh-graphics
   mesh-triangle
+  metadata
   metadb
   metrics
   metrics-influx
@@ -1150,8 +1150,8 @@
   mirage-crypto-pk
   mirage-crypto-rng
   mirage-crypto-rng-async
+  mirage-crypto-rng-lwt
   mirage-crypto-rng-mirage
-  mirage-crypto-rng.lwt
   mirage-crypto-rng.unix
   mirage-device
   mirage-flow
@@ -1201,7 +1201,6 @@
   mock
   mock-ounit
   monaco_jsoo
-  monolith
   monomorphic
   moss
   mparser
@@ -1209,7 +1208,6 @@
   mparser-re
   mperf
   mpp
-  mrmime
   msat
   msat.backend
   msat.backtrack
@@ -1272,6 +1270,7 @@
   ocaml-protoc
   ocaml-protoc-plugin
   ocaml-protoc-plugin.google_types
+  ocaml-protoc.compiler-lib
   ocaml-vdom
   ocaml-version
   ocaml_intrinsics
@@ -1280,15 +1279,18 @@
   ocamlformat-rpc-lib
   ocamlgraph
   ocamline
+  ocamlog
   ocb
   ocf
   ocf_ppx
   ockt
   ocluster-api
   ocolor
-  ocp-indent-nlfork.lexer
-  ocp-indent-nlfork.lib
-  ocp-indent-nlfork.utils
+  ocp-indent.dynlink
+  ocp-indent.lexer
+  ocp-indent.lib
+  ocp-indent.utils
+  ocp-index.lib
   ocp-ocamlres
   ocplib-endian
   ocplib-endian.bigstring
@@ -1339,7 +1341,6 @@
   opium
   opium-graphql
   opium-testing
-  opsian
   optimization1d
   optiml-transport
   optint
@@ -1362,8 +1363,15 @@
   ounit2.advanced
   ounit2.threads
   owee
+  owi
+  owl
   owl-base
+  owl-ode
   owl-ode-base
+  owl-ode-odepack
+  owl-opt
+  owl-opt-lbfgs
+  owl-plplot
   p4pp
   packstream
   pacomb
@@ -1387,14 +1395,12 @@
   pcre
   pecu
   petrol
-  pf-qubes
   pg_query
   pgocaml
   pgocaml_ppx
   pgx
   pgx_async
   pgx_lwt
-  pgx_lwt_mirage
   pgx_lwt_unix
   pgx_unix
   pgx_value_core
@@ -1449,6 +1455,11 @@
   ppx_const
   ppx_conv_func
   ppx_counters
+  ppx_css
+  ppx_css.css_jane
+  ppx_css.css_parser
+  ppx_css.css_printer
+  ppx_css.inline_css
   ppx_cstruct
   ppx_cstubs
   ppx_cstubs.custom
@@ -1475,6 +1486,8 @@
   ppx_deriving_encoding.lib
   ppx_deriving_hardcaml
   ppx_deriving_hardcaml.runtime
+  ppx_deriving_madcast
+  ppx_deriving_madcast.api
   ppx_deriving_popper
   ppx_deriving_protobuf
   ppx_deriving_protobuf.runtime
@@ -1510,6 +1523,12 @@
   ppx_here.runtime-lib
   ppx_ignore_instrumentation
   ppx_import
+  ppx_inline_test
+  ppx_inline_test.config
+  ppx_inline_test.drop
+  ppx_inline_test.libname
+  ppx_inline_test.runner.lib
+  ppx_inline_test.runtime-lib
   ppx_jane
   ppx_jane.kernel
   ppx_js_style
@@ -1526,6 +1545,16 @@
   ppx_matches
   ppx_module_timer
   ppx_module_timer.runtime
+  ppx_monad
+  ppx_monad.lib
+  ppx_monad.ppx
+  ppx_monad.ppx.do
+  ppx_monad.ppx.either
+  ppx_monad.ppx.list
+  ppx_monad.ppx.monad
+  ppx_monad.ppx.option
+  ppx_monad.ppx.result
+  ppx_monad.ppx.seq
   ppx_monoid
   ppx_mysql
   ppx_mysql.runtime
@@ -1552,7 +1581,6 @@
   ppx_rapper_async
   ppx_rapper_lwt
   ppx_regexp
-  ppx_seq
   ppx_sexp_conv
   ppx_sexp_conv.expander
   ppx_sexp_conv.runtime-lib
@@ -1583,6 +1611,15 @@
   ppx_xml_conv
   ppx_yojson_conv.expander
   ppx_yojson_conv_lib
+  ppxlib
+  ppxlib.ast
+  ppxlib.astlib
+  ppxlib.metaquot
+  ppxlib.metaquot_lifters
+  ppxlib.print_diff
+  ppxlib.stdppx
+  ppxlib.traverse
+  ppxlib.traverse_builtins
   ppxx
   pratter
   prbnmcn-basic-structures
@@ -1591,7 +1628,6 @@
   prbnmcn-dagger
   prbnmcn-gnuplot
   prbnmcn-linalg
-  prbnmcn-proptest
   prbnmcn-stats
   prbnmcn-ucb1
   preface
@@ -1617,14 +1653,19 @@
   protocell.google
   protocell.runtime
   protocol_version_header
+  prr
   psmt2-frontend
   psq
+  ptime
+  ptime.clock.os
   ptmap
   ptset
   pulseaudio
   pure-splitmix
   pvec
   pythonlib
+  qbf
+  qbf.quantor
   qcheck
   qcheck-alcotest
   qcheck-core
@@ -1644,6 +1685,11 @@
   rawlink-lwt
   rawlink.lowlevel
   rdbg
+  rdf
+  rdf.impls
+  rdf_lwt
+  rdf_postgresql
+  rdf_ppx
   re
   re.emacs
   re.glob
@@ -1660,7 +1706,6 @@
   reason.cmdliner
   reason.easy_format
   reason.ocaml-migrate-parsetree
-  received
   record_builder
   reddit_api_kernel
   redirect
@@ -1678,7 +1723,6 @@
   resource_cache
   resp
   resp-client
-  resp-mirage
   resp-server
   resp-unix
   resto
@@ -1720,6 +1764,7 @@
   samplerate
   sanddb
   scad_ml
+  scfg
   scgi
   scipy
   scrypt-kdf
@@ -1727,11 +1772,12 @@
   searchTree
   secp256k1
   secp256k1-internal
+  sedlex
+  sedlex.ppx
   sek
   semaphore-compat
   semver2
   sendmail
-  sendmail-lwt
   sendmail.starttls
   seq
   seqes
@@ -1826,7 +1872,6 @@
   string_dict
   stringext
   subtype-refinement
-  swhid
   swhid_compute
   swhid_core
   swhid_types
@@ -1837,6 +1882,7 @@
   taglib
   talaria-bibtex
   tar
+  tar-mirage
   tar-unix
   tar.gz
   tcpip
@@ -1879,7 +1925,6 @@
   tidy_email
   tidy_email_mailgun
   tidy_email_sendgrid
-  tidy_email_smtp
   time_now
   timed
   timed.compat
@@ -1895,8 +1940,8 @@
   tiny_httpd_camlzip
   tls
   tls-async
+  tls-lwt
   tls-mirage
-  tls.lwt
   toc
   tofn
   toml
@@ -1924,7 +1969,6 @@
   tsort
   tube
   tuntap
-  twostep
   tyabt
   typerep
   typeset
@@ -1956,9 +2000,6 @@
   uritemplate
   user-agent-parser
   username_kernel
-  uspf
-  uspf.lwt
-  uspf.unix
   uuidm
   uutf
   uuuu
@@ -2035,6 +2076,9 @@
   xmldiff_js
   xmlm
   xmlplaylist
+  xtmpl
+  xtmpl_js
+  xtmpl_ppx
   yaml
   yaml-sexp
   yaml.bindings
@@ -2056,5 +2100,7 @@
   zmq-async
   zmq-lwt
   zmq.deferred
+  zstandard
+  zstandard.bindings
   zxcvbn
 ))

@@ -107,6 +107,12 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libmaxminddb-dev \
   libsecp256k1-dev \
   libstring-shellquote-perl \
+  libopenblas-dev \
+  qt5-qmake \
+  libqt5quick5 \
+  qtdeclarative5-dev \
+  libgpiod-dev \
+  libzstd-dev \
   ;
 
 # create a non-root user
@@ -120,7 +126,7 @@ RUN opam init --disable-sandboxing --auto-setup
 
 # make an opam switch for running benchmarks
 RUN opam switch create bench 4.14.1
-RUN opam install -y dune ocamlbuild camlp5
+RUN opam install -y dune ocamlbuild
 
 # make an opam switch for preparing the files for the benchmark
 RUN opam switch create prepare 4.14.1
@@ -143,24 +149,6 @@ RUN opam monorepo pull || opam monorepo pull || opam monorepo pull
 # Copy the patch directory
 ADD --chown=user:users patches patches
 
-# Prepare native sources for hacl-star
-RUN . ~/.profile && cd duniverse/hacl-star/raw && ./configure && make -j
-
-# Prepare why3
-RUN . ~/.profile && \
-  cd duniverse/why3 && \
-  ./autogen.sh && \
-  ./configure && \
-  make coq.dune pvs.dune isabelle.dune src/util/config.ml
-
-# Install camlp5 outside of opam
-RUN . ~/.profile && \
-  cd duniverse/camlp5 && \
-  ./configure
-
-# Prepare coq
-RUN . ~/.profile && cd duniverse/coq && ./configure -no-ask
-
 # Prepare clangml
 RUN . ~/.profile && cd duniverse/clangml && ./configure
 
@@ -173,21 +161,11 @@ RUN bash -c 'for f in patches/*; do p=$(basename ${f%.diff}); echo Applying $p; 
 # Initialize some projects' source code
 RUN cd duniverse/zelus && ./configure
 RUN rm -rf duniverse/magic-trace/vendor
-RUN cd duniverse/ocurl && ./configure
-RUN cd duniverse/elpi && make config LEGACY_PARSER=1
 RUN cd duniverse/cpu && autoconf && autoheader && ./configure
 RUN cd duniverse/setcore && autoconf && autoheader && ./configure
 RUN cd duniverse/batsat-ocaml && ./build_rust.sh
 
-# This is a hack to make hacl-star compile on aarch64 and x64.
-# Different raw files get built depending on the architecture,
-# and we want to depend on all available .ml files in the raw
-# library.
-RUN bash -c 'TARGETS=$(cd duniverse/hacl-star/raw/lib && ls *.ml | xargs); sed -i -e "s/__TARGETS__/$TARGETS/" duniverse/hacl-star/dune'
-
-# async_ssl currently doesn't compile and is an optional dependency of some other packages
-# that we want to build, so we have to delete it
-RUN rm -r duniverse/async_ssl
+# Some packages define conflicting definitions of libraries so they must be removed for the build to succeed
 RUN rm -r duniverse/coq-of-ocaml
 
 COPY --chown=user:users dune-project .
