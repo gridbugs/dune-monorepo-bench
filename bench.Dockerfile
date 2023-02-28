@@ -172,6 +172,7 @@ COPY --chown=user:users dune-project .
 COPY --chown=user:users dune .
 COPY --chown=user:users hello.ml .
 COPY --chown=user:users Makefile .
+ADD --chown=user:users bin bin
 
 #RUN . ~/.profile && make hello || true
 #COPY --chown=user:users test.json .
