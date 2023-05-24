@@ -4,7 +4,7 @@ hello:
 	dune exec ./hello.exe
 
 bench:
-	dune exec --display=quiet bin/bench.exe -- dune build ./hello.exe -j auto
+	@cat test.json
 
 clean:
 	dune clean
