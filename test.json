@@ -7,7 +7,7 @@
           {"name": "benchmark-name", "value": 43, "units": "benchmark-unit", "description": "benchmark-description"},
         {
             "name": "time",
-            "value": 50,
+            "value": [50, 45, 51, 52, 50],
             "units": "sec",
             "description": "x"
         }
